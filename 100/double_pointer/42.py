@@ -7,6 +7,7 @@ class Solution:
         suf = list(accumulate(height[::-1], max))[::-1]
         return sum(min(u, v) - x for u, v, x in zip(pre, suf, height))
 
+# 0x3f
 class Solution:
     def trap(self, height: List[int]) -> int:
         n = len(height)
@@ -25,6 +26,7 @@ class Solution:
             ans += min(pre, suf) - h  # 累加每个水桶能接多少水
         return ans
 
+# 0x3f
 class Solution:
     def trap(self, height: List[int]) -> int:
         ans = pre_max = suf_max = 0
