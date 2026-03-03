@@ -21,5 +21,5 @@ dd = OrderedDict()
 dd['q'] = 's'
 dd['qq'] = 'ss'
 print(dd)
-dd.move_to_end('q', last=False)
+dd.move_to_end('q')
 print(dd)
