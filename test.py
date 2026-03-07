@@ -1,6 +1,7 @@
 from collections import OrderedDict
 from math import inf
 import heapq
+from typing import List
 from t100.linked_list.mock_listnode import ListNode, print_listnode
 
 
@@ -23,3 +24,13 @@ dd['qq'] = 'ss'
 print(dd)
 dd.move_to_end('q')
 print(dd)
+
+
+def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
+        g = [[] for _ in range(numCourses)]
+        for a, b in prerequisites:
+            # g[b].append(a)
+            print(a)
+            print(b)
+
+canFinish(2, [[1,2,3,4]])
