@@ -26,11 +26,13 @@ dd.move_to_end('q')
 print(dd)
 
 
-def canFinish(numCourses: int, prerequisites: List[List[int]]) -> bool:
-        g = [[] for _ in range(numCourses)]
-        for a, b in prerequisites:
-            # g[b].append(a)
-            print(a)
-            print(b)
-
-canFinish(2, [[1,2,3,4]])
+def findMin(nums: List[int]) -> int:
+    left, right = -1, len(nums) - 1  # 开区间 (-1, n-1)
+    while left + 1 < right:  # 开区间不为空
+        mid = (left + right) // 2
+        if nums[mid] < nums[-1]:
+            right = mid
+        else:
+            left = mid
+    return right
+print(findMin([4,5,6,7,0,1,2]))

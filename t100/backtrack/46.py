@@ -1,25 +1,25 @@
 from typing import List
 
-# 0x3f
+
 class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
+    def permute(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
+        path = [0] * n  # 所有排列的长度都是一样的 n
+        on_path = [False] * n
         ans = []
-        path = []
 
-        # 选或不选：讨论 nums[i] 是否加入 path
+        # 枚举 path[i] 填 nums 的哪个数
         def dfs(i: int) -> None:
-            if i == n:  # 子集构造完毕
-                ans.append(path.copy())  # 复制 path，也可以写 path[:]
+            if i == n:
+                ans.append(path.copy())  # 也可以写 path[:]
                 return
-
-            # 不选 nums[i]
-            dfs(i + 1)  # 考虑下一个数 nums[i+1] 选或不选
-
-            # 选 nums[i]
-            path.append(nums[i])
-            dfs(i + 1)  # 考虑下一个数 nums[i+1] 选或不选
-            path.pop()  # 恢复现场，撤销 path.append(nums[i])
+            for j, on in enumerate(on_path):
+                if not on:
+                    path[i] = nums[j]  # 从没有选的数字中选一个
+                    on_path[j] = True  # 已选上
+                    dfs(i + 1)
+                    on_path[j] = False  # 恢复现场
+                    # 注意 path 无需恢复现场，因为排列长度固定，直接覆盖就行
 
         dfs(0)
         return ans
