@@ -25,14 +25,7 @@ print(dd)
 dd.move_to_end('q')
 print(dd)
 
-
-def findMin(nums: List[int]) -> int:
-    left, right = -1, len(nums) - 1  # 开区间 (-1, n-1)
-    while left + 1 < right:  # 开区间不为空
-        mid = (left + right) // 2
-        if nums[mid] < nums[-1]:
-            right = mid
-        else:
-            left = mid
-    return right
-print(findMin([4,5,6,7,0,1,2]))
+tt = (('(', ')'), ('[', ']'), ('{', '}'))
+print(('(',')') in tt)
+print('ss'*2)
+print("s"[1:])
