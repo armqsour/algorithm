@@ -1,4 +1,4 @@
-from collections import OrderedDict
+from collections import Counter, OrderedDict
 from math import inf
 import heapq
 from typing import List
@@ -29,3 +29,6 @@ tt = (('(', ')'), ('[', ']'), ('{', '}'))
 print(('(',')') in tt)
 print('ss'*2)
 print("s"[1:])
+
+qq = [1,2,3,4,4,2]
+print(Counter(qq))
