@@ -1,4 +1,4 @@
-from collections import Counter, OrderedDict
+from collections import Counter, OrderedDict, defaultdict
 from math import inf
 import heapq
 from typing import List
@@ -32,3 +32,6 @@ print("s"[1:])
 
 qq = [1,2,3,4,4,2]
 print(Counter(qq))
+cnt = defaultdict(int)
+# cnt[1]=1
+print(all(v == Counter(qq)[k] for k, v in cnt.items()))
