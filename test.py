@@ -1,5 +1,5 @@
 from collections import Counter, OrderedDict, defaultdict
-from math import inf
+from math import inf, isqrt
 import heapq
 from typing import List
 from t100.linked_list.mock_listnode import ListNode, print_listnode
@@ -35,3 +35,6 @@ print(Counter(qq))
 cnt = defaultdict(int)
 # cnt[1]=1
 print(all(v == Counter(qq)[k] for k, v in cnt.items()))
+
+print(isqrt(10))
+print(sum([1,2,3]))
