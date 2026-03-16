@@ -38,3 +38,6 @@ print(all(v == Counter(qq)[k] for k, v in cnt.items()))
 
 print(isqrt(10))
 print(sum([1,2,3]))
+q = [[1,2,3],[4,5,6]]
+for i,j in zip(*q):
+    print(i,j)
